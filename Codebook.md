@@ -1,4 +1,4 @@
-#Codebook for MeanIndSubGrp
+#Codebook for MeanIndSubGrp data
 
 ###activitycat
 	Activity categories
