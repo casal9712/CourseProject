@@ -34,21 +34,21 @@ link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Sm
 
 ###load necessary library "dplyr" to perform following task
 	library(tidyr)
-##identify which of the feature contains keywords "mean" and "std" and assign it to a list
+###identify which of the feature contains keywords "mean" and "std" and assign it to a list
 	feat_sep<-separate(feat,V2,1:3,sep="-",extra="merge")
 	lista<-which(feat_sep[,3] %in% c("mean()","std()"))
 	listb<-which(feat_sep[,3] %in% c("mean()","std()"))+2	
 	listc<-c(1:2,listb)
-##subset all data using the identified list
+###subset all data using the identified list
 	sub<-alldata[,listc]
 
-##extract the identified names from the list of names and assign them to the data
+###extract the identified names from the list of names and assign them to the data
 	varname<-feat[lista,2]
 	varname_lista<-as.character(varname)
 	varname_listb<-c("ID","activity",varname_lista)
 	names(sub)<-varname_listb
 
-##create a new variables that recode numeric activity to a more descriptive variable: activitycat
+###create a new variables that recode numeric activity to a more descriptive variable: activitycat
 	attach(sub)
 	sub$activitycat[activity==1]<-"WALKING"
 	sub$activitycat[activity==2]<-"WALKING_UPSTAIRS"
@@ -57,12 +57,12 @@ link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Sm
 	sub$activitycat[activity==5]<-"STANDING"
 	sub$activitycat[activity==6]<-"LAYING"
 	detach(sub)
-##take out the numeric activity
+###take out the numeric activity
 	finalsub<-subset(sub,select=-activity)
 
-##perform means on all variables group by activitycar and ID and output it to a data
+###perform means on all variables group by activitycar and ID and output it to a data
 	ind<-group_by(finalsub, activitycat, ID) %>% summarise_each(funs(mean))
 
-## Independent tidy data to be created below with the means of each variable for each
-## combination of activity and subject:
+### Independent tidy data to be created below with the means of each variable for each
+### combination of activity and subject:
 write.table(ind,"MeanIndSubGrp.txt",row.name=FALSE)
