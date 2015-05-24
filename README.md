@@ -5,10 +5,10 @@ Resulting output contain a data with the computed means group by each activity a
 (Source: "Human Activity Recognition Using Smartphones Data Set" from UCI Machine Learning Repository;
 link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-##set working directory
+###set working directory
 	setwd("C:\\Users\\m i n g\\Desktop\\Getting and Cleaning data\\Course Project")
 
-##read in all necessary data
+###read in all necessary data
 	train_sub<-read.table("./UCI HAR Dataset/train/subject_train.txt")
 	train_lab<-read.table("./UCI HAR Dataset/train/Y_train.txt")
 	train<-read.table("./UCI HAR Dataset/train/X_train.txt")
@@ -16,23 +16,23 @@ link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Sm
 	test_lab<-read.table("./UCI HAR Dataset/test/Y_test.txt")
 	test<-read.table("./UCI HAR Dataset/test/X_test.txt")
 
-##load necessary library "dplyr" to perform following task
+###load necessary library "dplyr" to perform following task
 	library(dplyr)
-##merge all training set together (subject ID, activity, and actual measurements)
+###merge all training set together (subject ID, activity, and actual measurements)
 	train_sub<-rename(train_sub,ID=V1)
 	train_lab<-rename(train_lab,activity=V1)
 	train_all<-cbind(train_sub,train_lab,train)
-##merge all test set together (subject ID, activity, and actual measurements)
+###merge all test set together (subject ID, activity, and actual measurements)
 	test_sub<-rename(test_sub,ID=V1)
 	test_lab<-rename(test_lab,activity=V1)
 	test_all<-cbind(test_sub,test_lab,test)
-##merge training and test sets together
+###merge training and test sets together
 	alldata<-rbind(train_all,test_all)
 
-##read in the list of values for later assigning the variables names for the alldata
+###read in the list of values for later assigning the variables names for the alldata
 	feat<-read.table("./UCI HAR Dataset/features.txt")
 
-##load necessary library "dplyr" to perform following task
+###load necessary library "dplyr" to perform following task
 	library(tidyr)
 ##identify which of the feature contains keywords "mean" and "std" and assign it to a list
 	feat_sep<-separate(feat,V2,1:3,sep="-",extra="merge")
