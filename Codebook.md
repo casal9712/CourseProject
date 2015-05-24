@@ -13,11 +13,8 @@
 	Identifier for volunteers
 		1-30
 
-The variables represented in the output dataset contains the following additional variables.
-They are summarized means of each feature selection from the raw values group by activitycat and ID.
-(Please refer to the bottom of this document for additional information on the raw values)
-
-Each of the following variables has a range value from -1 to 1.
+##The variables represented in the output dataset contains the following additional variables. They are summarized means of each feature selection from the raw values group by activitycat and ID. (Please refer to the bottom of this document for additional information on the raw values)
+###Each of the following variables has a range value from -1 to 1.
 
 ###tBodyAcc-mean()-X
 ###tBodyAcc-mean()-Y
