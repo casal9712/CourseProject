@@ -1,4 +1,4 @@
-#Codebook for MeanIndSubGrp data
+#Codebook for MeanIndSubGrp data generated from run_analysis.R
 
 ###activitycat
 	Activity categories
