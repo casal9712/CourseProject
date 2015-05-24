@@ -1,10 +1,9 @@
 # README for R script to generate MeanIndSubGrp.txt data for Course Project
 
-## This script takes the following data: Training sets, Test sets, Training label, Test label, Training subjects ID, Test subjects ID
+## This script takes the following data: Training sets, Test sets, Training label, Test label, Training subjects ID, Test subjects ID and merged them into one file to compute the mean of the mean and standard deviation for each feature selection.
+Resulting output contain a data with the computed means group by each activity and volunteer in the experiment
 (Source: "Human Activity Recognition Using Smartphones Data Set" from UCI Machine Learning Repository;
 link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
-and merged them into one file to compute the mean of the mean and standard deviation for each feature selection.
-Resulting output contain a data with the computed means group by each activity and volunteer in the experiment
 
 ##set working directory
 	setwd("C:\\Users\\m i n g\\Desktop\\Getting and Cleaning data\\Course Project")
