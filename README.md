@@ -6,7 +6,7 @@ Resulting output contain a data with the computed means group by each activity a
 (Source: "Human Activity Recognition Using Smartphones Data Set" from UCI Machine Learning Repository;
 link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-###set working directory
+###set working directory (the unzipped folder "UCI HAR Dataset" should be in the working directory)
 	setwd("C:\\Users\\m i n g\\Desktop\\Getting and Cleaning data\\Course Project")
 
 ###read in all necessary data
