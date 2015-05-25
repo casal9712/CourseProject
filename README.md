@@ -1,5 +1,5 @@
 # README for R script to generate MeanIndSubGrp.txt data for Course Project
-# This is a more detailed description on what how the script works.
+# This is a more detailed description on how the script works comapred to the comments in the actual run_analysis.R.
 
 ## This script takes the following data: Training sets, Test sets, Training label, Test label, Training subjects ID, Test subjects ID and merged them into one file to compute the mean of the mean and standard deviation for each feature selection.
 Resulting output contain a data with the computed means group by each activity and volunteer in the experiment
