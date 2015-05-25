@@ -35,11 +35,17 @@ link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Sm
 ###load necessary library "dplyr" to perform following task
 	library(tidyr)
 ###identify which of the feature contains keywords "mean" and "std" and assign it to a list
+###first separate the value of the name into multiple columns using "-" as delimiter
+###then there will be one column containing values "mean()" and "std()" and others
+###use this column to subset the row index using which function, which will correspond to the column index in the all data
 	feat_sep<-separate(feat,V2,1:3,sep="-",extra="merge")
 	lista<-which(feat_sep[,3] %in% c("mean()","std()"))
+###the listb was created because the first two columns in the alldata is ID and activity,
+###so the index for the feature selection starts at 3
 	listb<-which(feat_sep[,3] %in% c("mean()","std()"))+2	
+###listc was created to add first two index for ID and activity
 	listc<-c(1:2,listb)
-###subset all data using the identified list
+###subset all data using listc which contain all the necessary column index
 	sub<-alldata[,listc]
 
 ###extract the identified names from the list of names and assign them to the data
